@@ -15,29 +15,27 @@
                     </div>
                     <form method="POST" action="{{ route('login') }}" class="user" >
                         @csrf
-                        
+
 
                         <div class="form-group">
                             <input type="email" name="email" class="form-control form-control-user" id="email"
                                 placeholder="Email Address">
                         </div>
                         <div class="form-group">
-                           
+
                                 <input type="password" name="password" class="form-control form-control-user"
                                     id="password" placeholder="Password">
-                           
-                            
+
+
                         </div>
                         <input type="submit" class="btn btn-primary btn-user btn-block" value="Login">
-                        
+
                         <hr>
                     </form>
                     <hr>
+
                     <div class="text-center">
-                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                    </div>
-                    <div class="text-center">
-                        <a class="small" href="login.html">Don't Have Account?</a>
+                        <a class="small" href="{{route('register')}}">Don't Have Account?</a>
                     </div>
                 </div>
             </div>
