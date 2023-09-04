@@ -9,7 +9,8 @@
             <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Price</th>
-            <th scope="col">Type</th>
+            <th scope="col">Descrpiption</th>
+            <th scope="col">Category</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -18,7 +19,7 @@
             @foreach ($products as $data)
                 <tr>
                     <th scope="row">
-                        {{ $data->id }}
+                        {{ $data->product_id}}
                     </th>
                     <td>
                         {{ $data->name }}
@@ -27,13 +28,16 @@
                         {{ $data->price }}
                     </td>
                     <td>
-                        None
+                        {{ $data->descrpiption }}
                     </td>
                     <td>
-                        <a class="btn btn-warning btn-sm" href="{{ route('dashboard.product.edit', $data->id) }}">
+                        {{ $data->category->name }}
+                    </td>
+                    <td>
+                        <a class="btn btn-warning btn-sm" href="{{ route('dashboard.product.edit', $data->product_id) }}">
                             แก้ไข
                         </a>
-                        <a class="btn btn-danger btn-sm" href="{{ route('dashboard.product.destroy', $data->id) }}">
+                        <a class="btn btn-danger btn-sm" href="{{ route('dashboard.product.destroy', $data->product_id) }}">
                             ลบ
                         </a>
                     </td>
